@@ -20,11 +20,44 @@ if pagamento == 1:
     print()
     print(f'O valor descontado os 10% será R${valor2:.2f}.')
     sleep(1)
+    print('-'*100)
+    print('''    [1] Dinheiro
+    [2] Pix''')
+    print('-'*100)
+    alternativa = int(input('\033[0;32mDinheiro ou pix?:\033[m '))
     print()
-    print('Aguardando pagamento...')
-    sleep(5)
-    print()
-    print('Obrigado por comprar na nossa loja. Volte sempre!')
+    if alternativa == 1:
+        pagamento = float(input('Informe o valor total dado no caixa: '))
+        print()
+        print(f'Seu troco será de {pagamento - valor2:.2f}')
+        print()
+        print('Aguardando pagamento...')
+        sleep(5)
+        print()
+        print('Pagamento confirmado!')
+        print()
+        print('Obrigado por comprar na nossa loja. Volte sempre!')
+    else:
+        print('A chave pix é 297.134')
+        while True: 
+            chave = float(input('\033[0;32mDigite a chave pix do beneficiado:\033[m '))
+            if chave != 297.134:
+                print('Digite a chave corretamente')
+            else:
+                break
+        while True:
+            pix = float(input('\033[0;32mDigite o valor:\033[m '))
+            if pix != valor2:
+                print('Digite o valor corretamente!')
+            else:
+                break
+        print()
+        print('Aguardando pagamento...')
+        sleep(5)
+        print()
+        print('Pagamento confirmado!')
+        print()
+        print('Obrigado por comprar na nossa loja. Volte sempre!')
 elif pagamento == 2:
     valor3 = valor - (valor*5)/100
     sleep(1)
@@ -36,6 +69,8 @@ elif pagamento == 2:
     print()
     print('Aguardando pagamento...')
     sleep(5)
+    print()
+    print('Pagamento aprovado.')
     print()
     print('Obrigado por comprar na nossa loja. Volte sempre!')
 elif pagamento == 3:
@@ -54,6 +89,8 @@ elif pagamento == 3:
         print()
         print('Aguardando pagamento...')
         sleep(5)
+        print()
+        print('Pagamento aprovado.')
         print()
         print('Obrigado por comprar na nossa loja. Volte sempre!')
     else:
