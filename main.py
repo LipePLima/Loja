@@ -29,8 +29,17 @@ if pagamento == 1:
     if alternativa == 1:
         pagamento = float(input('Informe o valor total dado no caixa: '))
         print()
-        print(f'Seu troco será de {pagamento - valor2:.2f}')
-        print()
+        if pagamento < valor2:
+            while True:
+                print('Seu pagamento é menor que o valor do produto. Por favor, pague corretamente!')
+                print()
+                novpag = float(input('Informe o valor total dado no caixa: '))
+                if novpag == valor2 or novpag > valor2:
+                    pagamento = novpag
+                    break
+        if pagamento > valor2:
+            print(f'Seu troco será de {pagamento - valor2:.2f}')
+            print()
         print('Aguardando pagamento...')
         sleep(5)
         print()
