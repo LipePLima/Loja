@@ -93,7 +93,7 @@ elif pagamento == 3:
     if escolha == 1:
         print()
         sleep(2)
-        print(f'Você pode parcelar em até 2x sem juros. O valor de cada parcela será de R${valor/2:.2f}.')
+        print(f'Você parcelará 2x sem juros. O valor de cada parcela será de R${valor/2:.2f}.')
         sleep(1)
         print()
         print('Aguardando pagamento...')
